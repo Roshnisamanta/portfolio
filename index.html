@@ -1,410 +1,540 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Roshni Samanta - Full-Stack Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  
-  <style>
-    :root{
-      --bg-1: #0b0512;
-      --purple-1: #2a0e47;
-      --purple-2: #6025b9;
-      --accent: #714bc9;
-      --glass-border: rgba(255,255,255,0.06);
-      --muted: #5d4785;
-      --glass-blur: 10px;
-      --max-w: 1200px;
-    }
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Roshni Samanta — AI & Full-Stack Engineer</title>
 
-    *{box-sizing: border-box; margin:0; padding:0}
-    html{scroll-behavior: smooth}
-    body{
-      font-family: "Poppins", system-ui, sans-serif;
-      background: radial-gradient(1200px 600px at 10% 20%, rgba(106, 31, 217, 0.18), transparent),
-                  radial-gradient(1000px 500px at 90% 85%, rgba(144, 100, 245, 0.12), transparent),
-                  linear-gradient(180deg, var(--bg-1) 0%, #240b32 100%);
-      color:#cdcccd;
-      -webkit-font-smoothing:antialiased;
-      padding:48px 20px;
-      display:flex;
-      justify-content:center;
-      min-height:100vh;
-    }
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 
-    .container{width:100%; max-width:var(--max-w)}
-
-    /* NAVBAR */
-    .navbar{display:flex; align-items:center; justify-content:space-between; margin-bottom:60px; animation: fadeDown 0.8s ease}
-    .brand{display:flex; align-items:center; gap:12px}
-    .logo{width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,var(--purple-2),var(--accent)); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:24px; box-shadow: 0 8px 32px rgba(111,43,214,0.3)}
-    .brand-text{font-weight:700; font-size:18px}
-    .brand-subtitle{font-size:12px; color:var(--muted)}
-    .nav-links{display:flex; gap:8px; align-items:center}
-    .nav-links a{text-decoration:none; color:var(--muted); font-size:14px; font-weight:600; padding:10px 16px; border-radius:10px; transition: all 0.3s ease}
-    .nav-links a:hover{background: rgba(255,255,255,0.06); color:#fff}
-
-    /* HERO */
-    .hero{display:grid; grid-template-columns: 1fr 440px; gap:40px; align-items:center; margin-bottom:80px; animation: fadeUp 0.8s ease}
-    .eyebrow{color:var(--accent); font-weight:600; font-size:16px; margin-bottom:16px; display:inline-block}
-    .title{font-size:64px; line-height:1.1; margin:0 0 24px 0; font-weight:800; letter-spacing:-2px; background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text}
-    .subtitle{color:var(--muted); font-size:18px; line-height:1.7; margin-bottom:32px; max-width:95%}
-    .btn-group{display:flex; gap:16px; flex-wrap:wrap}
-    .btn{background: linear-gradient(90deg,var(--purple-2),var(--accent)); padding:14px 28px; border-radius:12px; color:white; border:0; font-weight:700; font-size:15px; cursor:pointer; box-shadow: 0 10px 30px rgba(111,43,214,0.3); transition: all 0.3s ease; text-decoration:none; display:inline-block}
-    .btn:hover{transform: translateY(-2px); box-shadow: 0 16px 40px rgba(111,43,214,0.4)}
-    .btn-secondary{background: rgba(255,255,255,0.06); border:1px solid var(--glass-border); padding:14px 28px; border-radius:12px; color:white; font-weight:600; font-size:15px; cursor:pointer; transition: all 0.3s ease; text-decoration:none; display:inline-block}
-    .btn-secondary:hover{background: rgba(255,255,255,0.1); transform: translateY(-2px)}
-
-    /* HERO CARD */
-    .hero-card{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border:1px solid var(--glass-border); border-radius:24px; padding:32px; backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); box-shadow: 0 8px 40px rgba(88,0,210,0.2); position:relative; overflow:hidden}
-    .avatar{width:120px; height:120px; border-radius:20px; background:linear-gradient(135deg,var(--purple-2),var(--accent)); display:flex; align-items:center; justify-content:center; font-size:64px; margin-bottom:24px; box-shadow: 0 16px 40px rgba(111,43,214,0.3); position:relative; overflow:hidden}
-    .avatar img{width:100%; height:100%; object-fit:cover; border-radius:20px}
-    .open-to-work{position:absolute; bottom:-8px; right:-8px; background:linear-gradient(135deg, #12976a, #059669); color:white; padding:6px 12px; border-radius:20px; font-size:11px; font-weight:700; box-shadow: 0 4px 12px rgba(16,185,129,0.4); border:3px solid var(--bg-1); animation: pulse 2s infinite; white-space:nowrap}
-    @keyframes pulse{0%, 100%{box-shadow: 0 4px 12px rgba(16,185,129,0.4)}50%{box-shadow: 0 4px 20px rgba(16,185,129,0.7)}}
-    .hero-card h3{font-size:22px; margin-bottom:12px}
-    .hero-card p{color:var(--muted); font-size:15px; line-height:1.6; margin-bottom:20px}
-    .tags{display:flex; gap:8px; flex-wrap:wrap}
-    .tag{padding:8px 14px; border-radius:10px; background:rgba(139,92,246,0.15); border:1px solid rgba(139,92,246,0.3); font-size:13px; color:var(--accent); font-weight:600}
-
-    /* SECTION */
-    .section{margin-bottom:80px; animation: fadeUp 0.8s ease}
-    .section-header{margin-bottom:32px}
-    .section-title{font-size:36px; font-weight:700; margin-bottom:8px; color:#fff}
-    .section-subtitle{color:var(--muted); font-size:16px; line-height:1.6}
-
-    /* CARDS GRID */
-    .cards-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px}
-    .card{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border-radius:16px; padding:28px; border:1px solid var(--glass-border); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: all 0.3s ease; cursor: pointer}
-    .card:hover{transform: translateY(-8px); box-shadow: 0 24px 60px rgba(111,43,214,0.25); border-color: rgba(139,92,246,0.3)}
-    .card-icon{width:52px; height:52px; background:linear-gradient(135deg,var(--purple-2),var(--accent)); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px; box-shadow: 0 8px 24px rgba(111,43,214,0.3)}
-    .card-label{font-size:12px; color:var(--accent); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px}
-    .card h4{font-size:20px; margin-bottom:12px; color:#fff}
-    .card p{color:var(--muted); font-size:14px; line-height:1.6}
-
-    /* SKILLS */
-    .skills-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:16px}
-    .skill-item{background: rgba(255,255,255,0.02); border:1px solid var(--glass-border); border-radius:12px; padding:20px; text-align:center; transition: all 0.3s ease}
-    .skill-item:hover{background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.3); transform: translateY(-4px)}
-    .skill-icon{font-size:32px; margin-bottom:12px}
-    .skill-name{font-weight:600; font-size:14px}
-
-    /* MODAL */
-    .modal{display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(10px); animation: fadeIn 0.3s ease}
-    .modal.active{display: flex}
-    .modal-content{background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px; max-width: 900px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative; box-shadow: 0 20px 80px rgba(111,43,214,0.4); animation: slideUp 0.4s ease}
-    .modal-close{position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 24px; transition: all 0.3s ease; border:none}
-    .modal-close:hover{background: rgba(255,255,255,0.2); transform: rotate(90deg)}
-    
-    .resume-content h2{font-size: 32px; margin-bottom: 10px; background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text}
-    .resume-content h3{font-size: 22px; color: var(--accent); margin: 30px 0 15px 0; border-bottom: 2px solid rgba(139,92,246,0.3); padding-bottom: 10px}
-    .resume-content p{color: var(--muted); line-height: 1.8; margin-bottom: 15px}
-    .resume-content ul{list-style: none; padding: 0; margin-bottom: 20px}
-    .resume-content li{color: rgba(255,255,255,0.85); padding: 6px 0; padding-left: 24px; position: relative; line-height:1.6}
-    .resume-content li:before{content: "▹"; position: absolute; left: 0; color: var(--accent); font-size: 18px}
-    .resume-content strong{color: #fff}
-    .contact-info{display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; font-size: 14px}
-    .contact-info a{color: var(--accent); text-decoration: none}
-    .contact-info a:hover{text-decoration: underline}
-
-    /* FOOTER */
-    .footer{margin-top:80px; padding-top:40px; border-top:1px solid var(--glass-border); text-align:center}
-    .footer-content{margin-bottom:24px}
-    .footer h3{font-size:28px; margin-bottom:12px}
-    .footer p{color:var(--muted); margin-bottom:24px; max-width:600px; margin-left:auto; margin-right:auto; line-height:1.7}
-    .social-links{display:flex; justify-content:center; gap:16px; margin-bottom:32px}
-    .social-link{width:48px; height:48px; background: rgba(255,255,255,0.04); border:1px solid var(--glass-border); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; transition: all 0.3s ease; text-decoration:none}
-    .social-link:hover{background: rgba(139,92,246,0.2); border-color: var(--accent); transform: translateY(-4px)}
-    .copyright{color:var(--muted); font-size:13px}
-
-    /* ANIMATIONS */
-    @keyframes fadeUp{from{opacity:0; transform: translateY(30px)} to{opacity:1; transform: translateY(0)}}
-    @keyframes fadeDown{from{opacity:0; transform: translateY(-30px)} to{opacity:1; transform: translateY(0)}}
-    @keyframes fadeIn{from{opacity: 0} to{opacity: 1}}
-    @keyframes slideUp{from{opacity: 0; transform: translateY(50px)} to{opacity: 1; transform: translateY(0)}}
-
-    /* RESPONSIVE */
-    @media (max-width:980px){.hero{grid-template-columns: 1fr} .title{font-size:48px} .subtitle{max-width:100%}}
-    @media (max-width:640px){
-      .nav-links{display:none}
-      .title{font-size:40px}
-      .section-title{font-size:28px}
-      body{padding:24px 16px}
-      .navbar{margin-bottom:40px}
-      .cards-grid{grid-template-columns: 1fr}
-      .open-to-work{font-size:10px; padding:5px 10px}
-      .modal-content{padding: 30px 20px; width: 95%}
-      .contact-info{flex-direction: column; gap: 10px}
-      .resume-content h2{font-size: 26px}
-      .resume-content h3{font-size: 20px}
-    }
-  </style>
+  <!-- Portfolio Styles -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="brand">
-        <div class="logo">R</div>
-        <div>
-          <div class="brand-text">Roshni Samanta</div>
-          <div class="brand-subtitle">Full-Stack Software & AI Engineer</div>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+<!-- ── VANTA BACKGROUND CANVAS ────────────────────── -->
+<div id="vanta-bg"></div>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="eyebrow">👋 Hello, I'm Roshni</div>
-        <h1 class="title">Building Beautiful, Reliable Web Apps</h1>
-        <p class="subtitle">I'm a full-stack and AI engineer focused on Java, JavaScript, HTML and CSS. I build usable interfaces and resilient backends — recently creating tools for community help, small businesses, and automation.</p>
-        <div class="btn-group">
-          <a class="btn" href="mailto:roshni.samanta.1985@gmail.com">Get In Touch</a>
-          <a class="btn-secondary" href="#work">View My Projects</a>
-        </div>
-      </div>
+<!-- ── NOISE OVERLAY ──────────────────────────────── -->
+<div class="noise"></div>
 
-      <div class="hero-card">
-        <div class="avatar">
-          <img src="WhatsApp Image 2025-12-02 at 4.17.41 PM.jpeg" alt="Roshni Samanta"> 
-          <div class="open-to-work">🟢 Open to Work</div>
-        </div>
-        <h3>Full Stack Developer</h3>
-        <p>Currently building community-focused web apps and portfolio sites. Comfortable with JavaScript, Spring Boot, Java, and designing accessible UI.</p>
-        <div class="tags">
-          <div class="tag">JavaScript</div>
-          <div class="tag">Spring Boot</div>
-          <div class="tag">Java</div>
-          <div class="tag">CSS</div>
-          <div class="tag">SQL</div>
-          <div class="tag">HTML</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Passionate about building products that help people — with strong foundations in Java and web technologies</p>
-      </div>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">💻</div>
-          <div class="card-label">Development</div>
-          <h4>Production-ready Code</h4>
-          <p>I write maintainable, well-tested code. I prefer clear APIs, solid error handling, and clean architecture so projects scale easily.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <div class="card-label">Impact</div>
-          <h4>Community-first Projects</h4>
-          <p>I focus on projects that solve real problems — from helping citizens report missing persons faster to small business websites that increase sales.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🚀</div>
-          <div class="card-label">Learning</div>
-          <h4>Always Improving</h4>
-          <p>I'm actively learning modern JavaScript, front-end patterns, and DSA in Java. I love shipping projects and iterating based on user feedback.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK -->
-    <section class="section" id="work">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Recent work and product ideas that showcase my skills and impact</p>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">📝</div>
-          <div class="card-label">Legal compass</div>
-          <h4>Smart Legal Article & Complaint Finder</h4>
-          <p>Legal Compass is a smart legal guidance tool that helps users quickly find the correct legal articles, sections, and document formats for filing complaints.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🏪</div>
-          <div class="card-label">Small Business</div>
-          <h4>Local Business Portfolio Builder</h4>
-          <p>A no-code generator that creates a responsive website for local shops. Owners fill a form and the system auto-generates a live preview, downloadable site bundle, and a QR code for sharing.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">📡</div>
-          <div class="card-label">Prism</div>
-          <h4>Emergency Connect — Rapid Alert System</h4>
-          <p>Location-based alert platform to report missing or at-risk people instantly. Sends notifications to nearby volunteers, police, and shops; includes map view, status tracking, and an admin dashboard for case management.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">💍</div>
-          <div class="card-label">E-Commerce</div>
-          <h4>Jewellery Shop Website</h4>
-          <p>Personal e-commerce front for a local jewelry shop showcasing designs and contact/ordering flow — responsive and mobile-first.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="section-header">
-        <h2 class="section-title">Technical Skills</h2>
-        <p class="section-subtitle">Technologies I use day-to-day</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-item"><div class="skill-icon">☕</div><div class="skill-name">Java / Spring Boot</div></div>
-        <div class="skill-item"><div class="skill-icon">🎨</div><div class="skill-name">HTML & CSS</div></div>
-        <div class="skill-item"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div></div>
-        <div class="skill-item"><div class="skill-icon">🐍</div><div class="skill-name">Python</div></div>
-        <div class="skill-item"><div class="skill-icon">🗄️</div><div class="skill-name">SQL</div></div>
-        <div class="skill-item"><div class="skill-icon">🐳</div><div class="skill-name">Docker</div></div>
-      </div>
-    </section>
-
-    <!-- FOOTER / CONTACT -->
-    <footer class="footer" id="contact">
-      <div class="footer-content">
-        <h3>Let's Work Together</h3>
-        <p>I'm open to internship and full-time roles in full-stack and web development. Want to collaborate or see code? Send a message or check my resume.</p>
-        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:32px">
-          <a class="btn" href="mailto:roshni.samanta.1985@gmail.com">Email Me</a>
-          <button class="btn-secondary" onclick="openResumeModal()">View Resume</button>
-        </div>
-      </div>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/roshni-samanta" class="social-link" title="LinkedIn" target="_blank">💼</a>
-        <a href="https://github.com/Roshnisamanta" class="social-link" title="GitHub" target="_blank">💻</a>
-        <a href="mailto:roshni.samanta.1985@gmail.com" class="social-link" title="Email">📧</a>
-      </div>
-      <div class="copyright">© 2025 Roshni Samanta. Built with 💜 and lots of coffee.</div>
-    </footer>
-
+<!-- ── NAV ───────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      ROSHNI.DEV
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="mailto:roshni.samanta.1985@gmail.com">HIRE ME &rarr;</a>
+    <button class="hamburger" onclick="openMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
 
-  <!-- RESUME MODAL -->
-  <div class="modal" id="resumeModal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeResumeModal()">×</button>
-      
-      <div class="resume-content">
-        <h2>ROSHNI SAMANTA</h2>
-        <p style="color: var(--accent); font-size: 18px; margin-bottom: 20px; font-weight:600">B.Tech - Artificial Intelligence & Machine Learning</p>
-        
-        <div class="contact-info">
-          <span>📧 <a href="mailto:2k23.psitaiml2311128@gmail.com">2k23.psitaiml2311128@gmail.com</a></span>
-          <span>📱 <a href="tel:+917651827384">+91 7651827384</a></span>
-          <span>🔗 <a href="https://github.com/Roshnisamanta" target="_blank">GitHub: Roshnisamanta</a></span>
-          <span>💼 <a href="https://www.linkedin.com/in/roshni-samanta" target="_blank">LinkedIn: Roshni Samanta</a></span>
+<!-- ── MOBILE MENU ────────────────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">&#x2715;</button>
+  <a href="#about" onclick="closeMenu()">ABOUT</a>
+  <a href="#work" onclick="closeMenu()">PROJECTS</a>
+  <a href="#skills" onclick="closeMenu()">SKILLS</a>
+  <a href="#contact" onclick="closeMenu()">CONTACT</a>
+</div>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge reveal">
+          <div class="badge-pulse"></div>
+          Available for Opportunities
         </div>
-
-        <div style="text-align: center; margin: 25px 0;">
-          <a href="roshni s cv.docx" class="btn" download style="display: inline-block;">📥 Download CV</a>
+        <h1 class="hero-headline reveal reveal-delay-1">
+          <em>AI-DRIVEN</em><br>
+          DEVELOPER
+        </h1>
+        <p class="hero-sub-headline reveal reveal-delay-2">FULL-STACK ENGINEER</p>
+        <p class="hero-desc reveal reveal-delay-3">
+          Building <strong>production-ready web apps</strong> and intelligent systems with
+          Java, Spring Boot, and modern JavaScript.
+          Focused on community impact and scalable architecture.
+        </p>
+        <div class="btn-row reveal reveal-delay-4">
+          <a class="btn-primary" href="#work">Explore Projects <span>&rarr;</span></a>
+          <button class="btn-ghost" onclick="openResume()">View Resume <span>&#x2197;</span></button>
         </div>
+      </div>
 
-        <h3>Professional Summary</h3>
-        <p>Motivated and detail-oriented B.Tech student specializing in Artificial Intelligence and Machine Learning. Skilled in Java, C, and full-stack development, with hands-on experience building real-world projects. Strong in problem-solving, teamwork, and applying technical concepts effectively. Eager to contribute to innovative work in AI and web development.</p>
+      <!-- RIGHT: PROFILE CARD -->
+      <div class="reveal reveal-delay-2">
+        <div class="profile-card">
+          <div class="avatar-wrap">
+            <div class="avatar-ring">
+              <div class="avatar-inner">
+                <img
+                  src="profile.jpg"
+                  alt="Roshni Samanta"
+                  onerror="this.style.display='none';this.parentElement.innerHTML='R'"
+                />
+              </div>
+            </div>
+            <div class="status-pill">
+              <div class="status-dot"></div>
+              OPEN TO WORK
+            </div>
+          </div>
+          <div class="profile-name">Roshni Samanta</div>
+          <div class="profile-role">AI &amp; Full-Stack Engineer</div>
+          <div class="profile-bio">
+            B.Tech student in AI &amp; ML at PSIT, AKTU. Passionate about building tools that
+            solve real-world problems &mdash; from legal tech to community safety systems.
+          </div>
+          <div class="chip-row">
+            <div class="chip">Java</div>
+            <div class="chip">Spring Boot</div>
+            <div class="chip">JavaScript</div>
+            <div class="chip">SQL</div>
+            <div class="chip">AI/ML</div>
+          </div>
+          <div class="divider-h"></div>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-val">4+</div>
+              <div class="stat-key">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val">AI</div>
+              <div class="stat-key">Focus</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val">&infin;</div>
+              <div class="stat-key">Curiosity</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <h3>Education</h3>
-        <p><strong>B.Tech - Artificial Intelligence & Machine Learning</strong></p>
-        <p>Pranveer Singh Institute of Technology (PSIT), AKTU</p>
-        <p>Percentage (Till 4th Semester): 73.36%</p>
+    </div>
+  </div>
+</section>
 
-        <p style="margin-top: 20px;"><strong>Class 12 - CBSE</strong></p>
-        <p>Guru Nanak Public School</p>
-        <p>Percentage: 74%</p>
-
-        <p style="margin-top: 20px;"><strong>Class 10 - CBSE</strong></p>
-        <p>Dr. P. R. Wasson Public School</p>
-        <p>Percentage: 65%</p>
-
-        <h3>Skills</h3>
-        <ul>
-          <li><strong>Programming Languages:</strong> HTML, CSS, C, Java (DSA in progress)</li>
-          <li><strong>Core Skills:</strong> DSA, Problem-Solving (Actively practicing DSA and coding problems in Java to strengthen logic and core fundamentals)</li>
-          <li><strong>Web Development:</strong> Responsive UI, Forms, Layouts</li>
-          <li><strong>Tools:</strong> VS Code, Git, GitHub</li>
-          <li><strong>Soft Skills:</strong> Communication, Teamwork, Quick Learning</li>
-        </ul>
-
-        <h3>Project</h3>
-        <p><strong>Jewellery E-Commerce Platform</strong></p>
-        <p>A complete online shopping website for jewellery with responsive UI, user authentication, secure checkout, and database-driven order management. Includes an admin panel for managing products, inventory, and orders.</p>
-        <ul>
-          <li>Built responsive UI for optimal user experience across devices</li>
-          <li>Implemented user authentication and secure checkout process</li>
-          <li>Designed database-driven order management system</li>
-          <li>Created admin panel for product and inventory management</li>
-        </ul>
-        <p><strong>Tech Stack:</strong> HTML, CSS</p>
-
-        <h3>Additional Projects</h3>
-        
-        <p><strong>Legal Compass - Smart Legal Article & Complaint Finder</strong></p>
-        <ul>
-          <li>Developed a legal guidance tool to help users find correct legal articles and document formats</li>
-          <li>Implemented intelligent search algorithms for quick document retrieval</li>
-          <li>Built responsive UI for easy navigation and document access</li>
-        </ul>
-
-        <p><strong>Emergency Connect - Rapid Alert System (Prism)</strong></p>
-        <ul>
-          <li>Created location-based alert platform for missing persons reports</li>
-          <li>Integrated real-time notifications to volunteers, police, and local shops</li>
-          <li>Developed admin dashboard for case management and status tracking</li>
-        </ul>
-
-        <p><strong>Local Business Portfolio Builder</strong></p>
-        <ul>
-          <li>Built no-code website generator for local businesses</li>
-          <li>Auto-generates responsive websites with live preview functionality</li>
-          <li>Integrated QR code generation for easy sharing</li>
-        </ul>
-
-        <h3>Hobbies</h3>
-        <ul>
-          <li>Dance</li>
-          <li>Traveling</li>
-        </ul>
+<!-- ── ABOUT ──────────────────────────────────────── -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag reveal">Philosophy</div>
+    <h2 class="section-title reveal reveal-delay-1">WHAT<br>DRIVES ME</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      I build software that solves real problems &mdash; combining strong engineering
+      fundamentals with a user-first mindset.
+    </p>
+    <div class="grid-3">
+      <div class="about-card reveal reveal-delay-1">
+        <div class="ac-num">01</div>
+        <div class="ac-icon">&#x2699;&#xFE0F;</div>
+        <div class="ac-label">Engineering</div>
+        <div class="ac-title">Production-Ready Code</div>
+        <div class="ac-body">
+          I write maintainable, well-tested code. Clean architecture, solid error handling,
+          and APIs built to scale &mdash; because quality compounds over time.
+        </div>
+      </div>
+      <div class="about-card reveal reveal-delay-2">
+        <div class="ac-num">02</div>
+        <div class="ac-icon">&#x1F3AF;</div>
+        <div class="ac-label">Impact</div>
+        <div class="ac-title">Community-First Products</div>
+        <div class="ac-body">
+          Every project I ship solves a genuine need &mdash; helping citizens report missing
+          persons faster, empowering small businesses online, and making legal systems
+          accessible.
+        </div>
+      </div>
+      <div class="about-card reveal reveal-delay-3">
+        <div class="ac-num">03</div>
+        <div class="ac-icon">&#x1F9E0;</div>
+        <div class="ac-label">Growth</div>
+        <div class="ac-title">Always Evolving</div>
+        <div class="ac-body">
+          Actively leveling up in DSA (Java), modern JavaScript patterns, and AI/ML.
+          I love iterating on real user feedback &mdash; ship fast, learn faster.
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <script>
-    function openResumeModal() {
-      document.getElementById('resumeModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+<!-- ── PROJECTS ───────────────────────────────────── -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-tag reveal">Featured Work</div>
+    <h2 class="section-title reveal reveal-delay-1">PROJECTS<br>THAT MATTER</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      Hand-picked projects that demonstrate depth, creativity, and real-world impact.
+    </p>
+    <div class="proj-grid">
 
-    function closeResumeModal() {
-      document.getElementById('resumeModal').classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
+      <div class="proj-card featured reveal">
+        <div class="proj-header">
+          <div class="proj-icon">&#x1F4E1;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">PRISM &middot; Safety Tech</div>
+        <div class="proj-name">Emergency Connect &mdash; Rapid Alert System</div>
+        <div class="proj-desc">
+          Location-based alert platform for missing or at-risk persons. Sends real-time
+          notifications to nearby volunteers, police, and local shops. Features a live map
+          view, case status tracking, and an admin dashboard &mdash; reducing response time
+          when it matters most.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">Java</div>
+          <div class="proj-tag">Spring Boot</div>
+          <div class="proj-tag">Maps API</div>
+          <div class="proj-tag">Real-time Alerts</div>
+          <div class="proj-tag">Admin Dashboard</div>
+          <div class="proj-tag">SQL</div>
+        </div>
+      </div>
 
-    // Close modal when clicking outside
-    document.getElementById('resumeModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeResumeModal();
-      }
-    });
+      <div class="proj-card reveal reveal-delay-1">
+        <div class="proj-header">
+          <div class="proj-icon">&#x2696;&#xFE0F;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">Legal Tech</div>
+        <div class="proj-name">Legal Compass &mdash; Smart Complaint Finder</div>
+        <div class="proj-desc">
+          Intelligent legal guidance tool that surfaces the correct articles, sections, and
+          document formats for filing complaints. Reduces the time citizens spend navigating
+          complex legal systems.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">JavaScript</div>
+          <div class="proj-tag">Search Algorithms</div>
+          <div class="proj-tag">Responsive UI</div>
+          <div class="proj-tag">HTML/CSS</div>
+        </div>
+      </div>
 
-    // Close modal with ESC key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeResumeModal();
-      }
-    });
-  </script>
+      <div class="proj-card reveal reveal-delay-2">
+        <div class="proj-header">
+          <div class="proj-icon">&#x1F3EA;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">No-Code &middot; SMB Tools</div>
+        <div class="proj-name">Local Business Portfolio Builder</div>
+        <div class="proj-desc">
+          No-code generator that creates a full responsive website for local shops. Owners
+          fill a form and the system auto-generates a live preview, downloadable site bundle,
+          and a QR code for instant sharing.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">JavaScript</div>
+          <div class="proj-tag">QR Generation</div>
+          <div class="proj-tag">Dynamic Templates</div>
+          <div class="proj-tag">HTML/CSS</div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal reveal-delay-3">
+        <div class="proj-header">
+          <div class="proj-icon">&#x1F48D;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">E-Commerce</div>
+        <div class="proj-name">Jewellery Shop &mdash; E-Commerce Platform</div>
+        <div class="proj-desc">
+          Full-featured online store with user authentication, secure checkout, database-driven
+          order management, and an admin panel for product and inventory control.
+          Mobile-first and fully responsive.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">HTML/CSS</div>
+          <div class="proj-tag">Auth</div>
+          <div class="proj-tag">Admin Panel</div>
+          <div class="proj-tag">Database</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────────────── -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-tag reveal">Capabilities</div>
+    <h2 class="section-title reveal reveal-delay-1">TECHNICAL<br>STACK</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      Technologies I build with &mdash; from backend systems to polished user interfaces.
+    </p>
+    <div class="skills-wrap">
+      <div class="skill-group reveal">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x2615;</div>Java</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x26A1;</div>JavaScript</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F40D;</div>Python</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F537;</div>C</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F3A8;</div>HTML &amp; CSS</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-label">Frameworks &amp; Libraries</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F33F;</div>Spring Boot</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F310;</div>REST APIs</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F4F1;</div>Responsive UI</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-label">Data &amp; Infrastructure</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F5C4;&#xFE0F;</div>SQL</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F433;</div>Docker</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F419;</div>Git &amp; GitHub</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-3">
+        <div class="skill-group-label">Specialisation</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F9E0;</div>AI / Machine Learning</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F501;</div>DSA in Java (in progress)</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F3AF;</div>Problem Solving</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ──────────────────────────────────── -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-tag reveal">Background</div>
+    <h2 class="section-title reveal reveal-delay-1">EDUCATION<br>&amp; TRAINING</h2>
+    <div class="timeline reveal reveal-delay-2">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">CURRENT &middot; 2023 &ndash; PRESENT</div>
+        <div class="tl-title">B.Tech &mdash; Artificial Intelligence &amp; Machine Learning</div>
+        <div class="tl-sub">Pranveer Singh Institute of Technology (PSIT), AKTU</div>
+        <div class="tl-grade">Specialising in AI, ML, Full-Stack Development</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">CLASS XII &middot; CBSE</div>
+        <div class="tl-title">Higher Secondary Education</div>
+        <div class="tl-sub">Guru Nanak Public School</div>
+        <div class="tl-grade">74%</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">CLASS X &middot; CBSE</div>
+        <div class="tl-title">Secondary Education</div>
+        <div class="tl-sub">Dr. P. R. Wasson Public School</div>
+        <div class="tl-grade">65%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag reveal">Let's Connect</div>
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-headline reveal reveal-delay-1">
+          READY<br>TO <em>BUILD</em><br>TOGETHER?
+        </h2>
+        <p class="contact-body reveal reveal-delay-2">
+          I'm actively seeking internship and full-time roles in full-stack and AI development.
+          If you're building something ambitious, I'd love to be part of it.
+        </p>
+        <div class="contact-links reveal reveal-delay-3">
+          <a class="contact-link" href="mailto:roshni.samanta.1985@gmail.com">
+            <div class="cl-icon">&#x1F4E7;</div>
+            <div class="cl-info">
+              <div class="cl-label">Email</div>
+              <div class="cl-val">roshni.samanta.1985@gmail.com</div>
+            </div>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/roshni-samanta" target="_blank">
+            <div class="cl-icon">&#x1F4BC;</div>
+            <div class="cl-info">
+              <div class="cl-label">LinkedIn</div>
+              <div class="cl-val">linkedin.com/in/roshni-samanta</div>
+            </div>
+          </a>
+          <a class="contact-link" href="https://github.com/Roshnisamanta" target="_blank">
+            <div class="cl-icon">&#x1F4BB;</div>
+            <div class="cl-info">
+              <div class="cl-label">GitHub</div>
+              <div class="cl-val">github.com/Roshnisamanta</div>
+            </div>
+          </a>
+          <a class="contact-link" href="tel:+917651827384">
+            <div class="cl-icon">&#x1F4F1;</div>
+            <div class="cl-info">
+              <div class="cl-label">Phone</div>
+              <div class="cl-val">+91 7651827384</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form">
+          <div class="form-row">
+            <label class="form-label">Your Name</label>
+            <input class="form-input" type="text" placeholder="Jane Smith" id="fname"/>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" type="email" placeholder="jane@company.com" id="femail"/>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell me about the role or project&hellip;" id="fmsg"></textarea>
+          </div>
+          <button class="form-submit" onclick="sendMessage()">SEND MESSAGE &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo">ROSHNI.DEV</div>
+      <div class="footer-copy">&copy; 2025 ROSHNI SAMANTA &middot; BUILT WITH PRECISION</div>
+      <div class="footer-socials">
+        <a class="social-btn" href="https://www.linkedin.com/in/roshni-samanta" target="_blank" title="LinkedIn">&#x1F4BC;</a>
+        <a class="social-btn" href="https://github.com/Roshnisamanta" target="_blank" title="GitHub">&#x1F4BB;</a>
+        <a class="social-btn" href="mailto:roshni.samanta.1985@gmail.com" title="Email">&#x1F4E7;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── RESUME MODAL ───────────────────────────────── -->
+<div class="modal-backdrop" id="resumeModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">CURRICULUM VITAE</div>
+      <button class="modal-close-btn" onclick="closeResume()">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="res-section">
+        <div class="res-name">ROSHNI SAMANTA</div>
+        <div class="res-role">B.Tech &mdash; Artificial Intelligence &amp; Machine Learning &middot; Full-Stack Engineer</div>
+        <div class="res-contact">
+          <a href="mailto:2k23.psitaiml2311128@gmail.com">2k23.psitaiml2311128@gmail.com</a>
+          <a href="tel:+917651827384">+91 7651827384</a>
+          <a href="https://github.com/Roshnisamanta" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/roshni-samanta" target="_blank">LinkedIn</a>
+        </div>
+        <div class="modal-dl-row">
+          <a class="btn-primary" href="roshnicv (3).pdf" download style="text-decoration:none">&#x1F4E5; Download Full CV</a>
+        </div>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Professional Summary</div>
+        <p class="res-para">
+          Motivated B.Tech student specialising in AI and ML with hands-on experience building
+          full-stack, real-world applications. Skilled in Java, C, and web development. Strong
+          problem-solver who works well in teams and applies technical knowledge effectively.
+          Eager to contribute to innovative AI and web development projects.
+        </p>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Education</div>
+        <div class="res-exp">
+          <div class="res-exp-title">B.Tech &mdash; Artificial Intelligence &amp; Machine Learning</div>
+          <div class="res-exp-sub">Pranveer Singh Institute of Technology &middot; AKTU &middot; 2023&ndash;Present</div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Class XII &mdash; CBSE</div>
+          <div class="res-exp-sub">Guru Nanak Public School &middot; 74%</div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Class X &mdash; CBSE</div>
+          <div class="res-exp-sub">Dr. P. R. Wasson Public School &middot; 65%</div>
+        </div>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Technical Skills</div>
+        <ul class="res-list">
+          <li class="res-list-item"><strong>Languages:</strong> Java, JavaScript, Python, C, HTML, CSS</li>
+          <li class="res-list-item"><strong>Frameworks:</strong> Spring Boot, REST APIs</li>
+          <li class="res-list-item"><strong>Tools:</strong> VS Code, Git, GitHub, Docker</li>
+          <li class="res-list-item"><strong>Focus Areas:</strong> DSA (Java &mdash; actively practicing), AI/ML, Responsive UI</li>
+          <li class="res-list-item"><strong>Soft Skills:</strong> Communication, Teamwork, Rapid Learning</li>
+        </ul>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Projects</div>
+        <div class="res-exp">
+          <div class="res-exp-title">Emergency Connect &mdash; Rapid Alert System</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">Built location-based alert platform for missing person reports</li>
+            <li class="res-list-item">Real-time notifications to volunteers, police, and local businesses</li>
+            <li class="res-list-item">Developed admin dashboard for case management and status tracking</li>
+          </ul>
+          <div class="res-tech"><span>Java</span><span>Spring Boot</span><span>SQL</span><span>Maps API</span></div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Legal Compass &mdash; Smart Complaint Finder</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">Legal guidance tool for finding correct articles and document formats</li>
+            <li class="res-list-item">Implemented intelligent search for rapid document retrieval</li>
+          </ul>
+          <div class="res-tech"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Local Business Portfolio Builder</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">No-code website generator with live preview and QR code sharing</li>
+            <li class="res-list-item">Auto-generates fully responsive site bundles</li>
+          </ul>
+          <div class="res-tech"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Jewellery E-Commerce Platform</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">Full online store with auth, checkout, and order management</li>
+            <li class="res-list-item">Admin panel for product and inventory control</li>
+          </ul>
+          <div class="res-tech"><span>HTML</span><span>CSS</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     SCRIPTS — load order matters:
+     1. Three.js  (Vanta dependency)
+     2. Vanta NET effect
+     3. main.js   (portfolio logic + Vanta init)
+     ════════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script src="main.js"></script>
+
 </body>
 </html>
