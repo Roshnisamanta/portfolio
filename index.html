@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Roshni Samanta — AI & Full-Stack Engineer</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Portfolio Styles -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ── VANTA BACKGROUND CANVAS ────────────────────── -->
+<div id="vanta-bg"></div>
+
+<!-- ── NOISE OVERLAY ──────────────────────────────── -->
+<div class="noise"></div>
+
+<!-- ── NAV ───────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      ROSHNI.DEV
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="mailto:roshni.samanta.1985@gmail.com">HIRE ME &rarr;</a>
+    <button class="hamburger" onclick="openMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ────────────────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">&#x2715;</button>
+  <a href="#about" onclick="closeMenu()">ABOUT</a>
+  <a href="#work" onclick="closeMenu()">PROJECTS</a>
+  <a href="#skills" onclick="closeMenu()">SKILLS</a>
+  <a href="#contact" onclick="closeMenu()">CONTACT</a>
+</div>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge reveal">
+          <div class="badge-pulse"></div>
+          Available for Opportunities
+        </div>
+        <h1 class="hero-headline reveal reveal-delay-1">
+          <em>AI-DRIVEN</em><br>
+          DEVELOPER
+        </h1>
+        <p class="hero-sub-headline reveal reveal-delay-2">FULL-STACK ENGINEER</p>
+        <p class="hero-desc reveal reveal-delay-3">
+          Building <strong>production-ready web apps</strong> and intelligent systems with
+          Java, Spring Boot, and modern JavaScript.
+          Focused on community impact and scalable architecture.
+        </p>
+        <div class="btn-row reveal reveal-delay-4">
+          <a class="btn-primary" href="#work">Explore Projects <span>&rarr;</span></a>
+          <button class="btn-ghost" onclick="openResume()">View Resume <span>&#x2197;</span></button>
+        </div>
+      </div>
+
+      <!-- RIGHT: PROFILE CARD -->
+      <div class="reveal reveal-delay-2">
+        <div class="profile-card">
+          <div class="avatar-wrap">
+            <div class="avatar-ring">
+              <div class="avatar-inner">
+                <img
+                  src="assets/profile.jpg"
+                  alt="Roshni Samanta"
+                  onerror="this.style.display='none';this.parentElement.innerHTML='R'"
+                />
+              </div>
+            </div>
+            <div class="status-pill">
+              <div class="status-dot"></div>
+              OPEN TO WORK
+            </div>
+          </div>
+          <div class="profile-name">Roshni Samanta</div>
+          <div class="profile-role">AI &amp; Full-Stack Engineer</div>
+          <div class="profile-bio">
+            B.Tech student in AI &amp; ML at PSIT, AKTU. Passionate about building tools that
+            solve real-world problems &mdash; from legal tech to community safety systems.
+          </div>
+          <div class="chip-row">
+            <div class="chip">Java</div>
+            <div class="chip">Spring Boot</div>
+            <div class="chip">JavaScript</div>
+            <div class="chip">SQL</div>
+            <div class="chip">AI/ML</div>
+          </div>
+          <div class="divider-h"></div>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-val">4+</div>
+              <div class="stat-key">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val">AI</div>
+              <div class="stat-key">Focus</div>
+            </div>
+            <div class="stat">
+              <div class="stat-val">&infin;</div>
+              <div class="stat-key">Curiosity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────── -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-tag reveal">Philosophy</div>
+    <h2 class="section-title reveal reveal-delay-1">WHAT<br>DRIVES ME</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      I build software that solves real problems &mdash; combining strong engineering
+      fundamentals with a user-first mindset.
+    </p>
+    <div class="grid-3">
+      <div class="about-card reveal reveal-delay-1">
+        <div class="ac-num">01</div>
+        <div class="ac-icon">&#x2699;&#xFE0F;</div>
+        <div class="ac-label">Engineering</div>
+        <div class="ac-title">Production-Ready Code</div>
+        <div class="ac-body">
+          I write maintainable, well-tested code. Clean architecture, solid error handling,
+          and APIs built to scale &mdash; because quality compounds over time.
+        </div>
+      </div>
+      <div class="about-card reveal reveal-delay-2">
+        <div class="ac-num">02</div>
+        <div class="ac-icon">&#x1F3AF;</div>
+        <div class="ac-label">Impact</div>
+        <div class="ac-title">Community-First Products</div>
+        <div class="ac-body">
+          Every project I ship solves a genuine need &mdash; helping citizens report missing
+          persons faster, empowering small businesses online, and making legal systems
+          accessible.
+        </div>
+      </div>
+      <div class="about-card reveal reveal-delay-3">
+        <div class="ac-num">03</div>
+        <div class="ac-icon">&#x1F9E0;</div>
+        <div class="ac-label">Growth</div>
+        <div class="ac-title">Always Evolving</div>
+        <div class="ac-body">
+          Actively leveling up in DSA (Java), modern JavaScript patterns, and AI/ML.
+          I love iterating on real user feedback &mdash; ship fast, learn faster.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────────── -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-tag reveal">Featured Work</div>
+    <h2 class="section-title reveal reveal-delay-1">PROJECTS<br>THAT MATTER</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      Hand-picked projects that demonstrate depth, creativity, and real-world impact.
+    </p>
+    <div class="proj-grid">
+
+      <div class="proj-card featured reveal">
+        <div class="proj-header">
+          <div class="proj-icon">&#x1F4E1;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">PRISM &middot; Safety Tech</div>
+        <div class="proj-name">Emergency Connect &mdash; Rapid Alert System</div>
+        <div class="proj-desc">
+          Location-based alert platform for missing or at-risk persons. Sends real-time
+          notifications to nearby volunteers, police, and local shops. Features a live map
+          view, case status tracking, and an admin dashboard &mdash; reducing response time
+          when it matters most.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">Java</div>
+          <div class="proj-tag">Spring Boot</div>
+          <div class="proj-tag">Maps API</div>
+          <div class="proj-tag">Real-time Alerts</div>
+          <div class="proj-tag">Admin Dashboard</div>
+          <div class="proj-tag">SQL</div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal reveal-delay-1">
+        <div class="proj-header">
+          <div class="proj-icon">&#x2696;&#xFE0F;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">Legal Tech</div>
+        <div class="proj-name">Legal Compass &mdash; Smart Complaint Finder</div>
+        <div class="proj-desc">
+          Intelligent legal guidance tool that surfaces the correct articles, sections, and
+          document formats for filing complaints. Reduces the time citizens spend navigating
+          complex legal systems.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">JavaScript</div>
+          <div class="proj-tag">Search Algorithms</div>
+          <div class="proj-tag">Responsive UI</div>
+          <div class="proj-tag">HTML/CSS</div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal reveal-delay-2">
+        <div class="proj-header">
+          <div class="proj-icon">&#x1F3EA;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">No-Code &middot; SMB Tools</div>
+        <div class="proj-name">Local Business Portfolio Builder</div>
+        <div class="proj-desc">
+          No-code generator that creates a full responsive website for local shops. Owners
+          fill a form and the system auto-generates a live preview, downloadable site bundle,
+          and a QR code for instant sharing.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">JavaScript</div>
+          <div class="proj-tag">QR Generation</div>
+          <div class="proj-tag">Dynamic Templates</div>
+          <div class="proj-tag">HTML/CSS</div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal reveal-delay-3">
+        <div class="proj-header">
+          <div class="proj-icon">&#x1F48D;</div>
+          <div class="proj-arrow">&#x2197;</div>
+        </div>
+        <div class="proj-category">E-Commerce</div>
+        <div class="proj-name">Jewellery Shop &mdash; E-Commerce Platform</div>
+        <div class="proj-desc">
+          Full-featured online store with user authentication, secure checkout, database-driven
+          order management, and an admin panel for product and inventory control.
+          Mobile-first and fully responsive.
+        </div>
+        <div class="proj-tags">
+          <div class="proj-tag">HTML/CSS</div>
+          <div class="proj-tag">Auth</div>
+          <div class="proj-tag">Admin Panel</div>
+          <div class="proj-tag">Database</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────────────── -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-tag reveal">Capabilities</div>
+    <h2 class="section-title reveal reveal-delay-1">TECHNICAL<br>STACK</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      Technologies I build with &mdash; from backend systems to polished user interfaces.
+    </p>
+    <div class="skills-wrap">
+      <div class="skill-group reveal">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x2615;</div>Java</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x26A1;</div>JavaScript</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F40D;</div>Python</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F537;</div>C</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F3A8;</div>HTML &amp; CSS</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-label">Frameworks &amp; Libraries</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F33F;</div>Spring Boot</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F310;</div>REST APIs</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F4F1;</div>Responsive UI</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-label">Data &amp; Infrastructure</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F5C4;&#xFE0F;</div>SQL</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F433;</div>Docker</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F419;</div>Git &amp; GitHub</div>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-3">
+        <div class="skill-group-label">Specialisation</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F9E0;</div>AI / Machine Learning</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F501;</div>DSA in Java (in progress)</div>
+          <div class="skill-chip"><div class="skill-chip-icon">&#x1F3AF;</div>Problem Solving</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ──────────────────────────────────── -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-tag reveal">Background</div>
+    <h2 class="section-title reveal reveal-delay-1">EDUCATION<br>&amp; TRAINING</h2>
+    <div class="timeline reveal reveal-delay-2">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">CURRENT &middot; 2023 &ndash; PRESENT</div>
+        <div class="tl-title">B.Tech &mdash; Artificial Intelligence &amp; Machine Learning</div>
+        <div class="tl-sub">Pranveer Singh Institute of Technology (PSIT), AKTU</div>
+        <div class="tl-grade">Specialising in AI, ML, Full-Stack Development</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">CLASS XII &middot; CBSE</div>
+        <div class="tl-title">Higher Secondary Education</div>
+        <div class="tl-sub">Guru Nanak Public School</div>
+        <div class="tl-grade">74%</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">CLASS X &middot; CBSE</div>
+        <div class="tl-title">Secondary Education</div>
+        <div class="tl-sub">Dr. P. R. Wasson Public School</div>
+        <div class="tl-grade">65%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-tag reveal">Let's Connect</div>
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-headline reveal reveal-delay-1">
+          READY<br>TO <em>BUILD</em><br>TOGETHER?
+        </h2>
+        <p class="contact-body reveal reveal-delay-2">
+          I'm actively seeking internship and full-time roles in full-stack and AI development.
+          If you're building something ambitious, I'd love to be part of it.
+        </p>
+        <div class="contact-links reveal reveal-delay-3">
+          <a class="contact-link" href="mailto:roshni.samanta.1985@gmail.com">
+            <div class="cl-icon">&#x1F4E7;</div>
+            <div class="cl-info">
+              <div class="cl-label">Email</div>
+              <div class="cl-val">roshni.samanta.1985@gmail.com</div>
+            </div>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/roshni-samanta" target="_blank">
+            <div class="cl-icon">&#x1F4BC;</div>
+            <div class="cl-info">
+              <div class="cl-label">LinkedIn</div>
+              <div class="cl-val">linkedin.com/in/roshni-samanta</div>
+            </div>
+          </a>
+          <a class="contact-link" href="https://github.com/Roshnisamanta" target="_blank">
+            <div class="cl-icon">&#x1F4BB;</div>
+            <div class="cl-info">
+              <div class="cl-label">GitHub</div>
+              <div class="cl-val">github.com/Roshnisamanta</div>
+            </div>
+          </a>
+          <a class="contact-link" href="tel:+917651827384">
+            <div class="cl-icon">&#x1F4F1;</div>
+            <div class="cl-info">
+              <div class="cl-label">Phone</div>
+              <div class="cl-val">+91 7651827384</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form">
+          <div class="form-row">
+            <label class="form-label">Your Name</label>
+            <input class="form-input" type="text" placeholder="Jane Smith" id="fname"/>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" type="email" placeholder="jane@company.com" id="femail"/>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell me about the role or project&hellip;" id="fmsg"></textarea>
+          </div>
+          <button class="form-submit" onclick="sendMessage()">SEND MESSAGE &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo">ROSHNI.DEV</div>
+      <div class="footer-copy">&copy; 2025 ROSHNI SAMANTA &middot; BUILT WITH PRECISION</div>
+      <div class="footer-socials">
+        <a class="social-btn" href="https://www.linkedin.com/in/roshni-samanta" target="_blank" title="LinkedIn">&#x1F4BC;</a>
+        <a class="social-btn" href="https://github.com/Roshnisamanta" target="_blank" title="GitHub">&#x1F4BB;</a>
+        <a class="social-btn" href="mailto:roshni.samanta.1985@gmail.com" title="Email">&#x1F4E7;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── RESUME MODAL ───────────────────────────────── -->
+<div class="modal-backdrop" id="resumeModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">CURRICULUM VITAE</div>
+      <button class="modal-close-btn" onclick="closeResume()">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="res-section">
+        <div class="res-name">ROSHNI SAMANTA</div>
+        <div class="res-role">B.Tech &mdash; Artificial Intelligence &amp; Machine Learning &middot; Full-Stack Engineer</div>
+        <div class="res-contact">
+          <a href="mailto:2k23.psitaiml2311128@gmail.com">2k23.psitaiml2311128@gmail.com</a>
+          <a href="tel:+917651827384">+91 7651827384</a>
+          <a href="https://github.com/Roshnisamanta" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/roshni-samanta" target="_blank">LinkedIn</a>
+        </div>
+        <div class="modal-dl-row">
+          <a class="btn-primary" href="roshnicv (3).pdf" download style="text-decoration:none">&#x1F4E5; Download Full CV</a>
+        </div>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Professional Summary</div>
+        <p class="res-para">
+          Motivated B.Tech student specialising in AI and ML with hands-on experience building
+          full-stack, real-world applications. Skilled in Java, C, and web development. Strong
+          problem-solver who works well in teams and applies technical knowledge effectively.
+          Eager to contribute to innovative AI and web development projects.
+        </p>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Education</div>
+        <div class="res-exp">
+          <div class="res-exp-title">B.Tech &mdash; Artificial Intelligence &amp; Machine Learning</div>
+          <div class="res-exp-sub">Pranveer Singh Institute of Technology &middot; AKTU &middot; 2023&ndash;Present</div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Class XII &mdash; CBSE</div>
+          <div class="res-exp-sub">Guru Nanak Public School &middot; 74%</div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Class X &mdash; CBSE</div>
+          <div class="res-exp-sub">Dr. P. R. Wasson Public School &middot; 65%</div>
+        </div>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Technical Skills</div>
+        <ul class="res-list">
+          <li class="res-list-item"><strong>Languages:</strong> Java, JavaScript, Python, C, HTML, CSS</li>
+          <li class="res-list-item"><strong>Frameworks:</strong> Spring Boot, REST APIs</li>
+          <li class="res-list-item"><strong>Tools:</strong> VS Code, Git, GitHub, Docker</li>
+          <li class="res-list-item"><strong>Focus Areas:</strong> DSA (Java &mdash; actively practicing), AI/ML, Responsive UI</li>
+          <li class="res-list-item"><strong>Soft Skills:</strong> Communication, Teamwork, Rapid Learning</li>
+        </ul>
+      </div>
+      <div class="res-section">
+        <div class="res-section-title">Projects</div>
+        <div class="res-exp">
+          <div class="res-exp-title">Emergency Connect &mdash; Rapid Alert System</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">Built location-based alert platform for missing person reports</li>
+            <li class="res-list-item">Real-time notifications to volunteers, police, and local businesses</li>
+            <li class="res-list-item">Developed admin dashboard for case management and status tracking</li>
+          </ul>
+          <div class="res-tech"><span>Java</span><span>Spring Boot</span><span>SQL</span><span>Maps API</span></div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Legal Compass &mdash; Smart Complaint Finder</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">Legal guidance tool for finding correct articles and document formats</li>
+            <li class="res-list-item">Implemented intelligent search for rapid document retrieval</li>
+          </ul>
+          <div class="res-tech"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Local Business Portfolio Builder</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">No-code website generator with live preview and QR code sharing</li>
+            <li class="res-list-item">Auto-generates fully responsive site bundles</li>
+          </ul>
+          <div class="res-tech"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+        </div>
+        <div class="res-exp">
+          <div class="res-exp-title">Jewellery E-Commerce Platform</div>
+          <ul class="res-list" style="margin-top:8px">
+            <li class="res-list-item">Full online store with auth, checkout, and order management</li>
+            <li class="res-list-item">Admin panel for product and inventory control</li>
+          </ul>
+          <div class="res-tech"><span>HTML</span><span>CSS</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     SCRIPTS — load order matters:
+     1. Three.js  (Vanta dependency)
+     2. Vanta NET effect
+     3. main.js   (portfolio logic + Vanta init)
+     ════════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
