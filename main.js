@@ -117,4 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initVanta();
   initScrollReveal();
   initListeners();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> f1907907328c2fa80ce1045801ac62c33bf80dca
