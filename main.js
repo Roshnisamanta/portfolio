@@ -117,4 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initVanta();
   initScrollReveal();
   initListeners();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 6894d6c (first commit)
