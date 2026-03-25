@@ -121,4 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 =======
 });
+<<<<<<< HEAD
 >>>>>>> 6894d6c (first commit)
+=======
+>>>>>>> f1907907328c2fa80ce1045801ac62c33bf80dca
+>>>>>>> b8cee5279c28462d4c0ace1881db5c43487cf288
